@@ -276,6 +276,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pinning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pinning
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -372,6 +381,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pinning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pinning
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -407,6 +425,25 @@
 <p>I per instal·lar fem servir la comanda sudo dpkg -i fitxer.deb.
 <img alt="Imatge" src="images/Imatge%20enganxada%20%286%29.png" />
 <img alt="Imatge" src="images/Imatge%20enganxada%20%287%29.png" /></p>
+<h2 id="pinning">Pinning</h2>
+<p>Entrem en el mode root i mirem la versio del candidat.
+<img alt="Imatge" src="images/Selecci%C3%B3_057.png" /></p>
+<p>Per actualitzar el candidat a una versió més nova fem les seguents comandes.
+<img alt="Imatge" src="images/Imatge%20enganxada%20%2812%29.png" /></p>
+<p>I com podem veure a canviat a una versió mes nova.
+<img alt="Imatge" src="images/Imatge%20enganxada%20%2810%29.png" /></p>
+<p>Per tornar a la versió anterior hem de anar al seguent directori.</p>
+<p>cd /etc/apt/preferences.d</p>
+<p>I despres creem un arxiu anomenat i l'editem.</p>
+<p>nano apt_preferences</p>
+<p>Al editar hem de saber a quina versió volem tornar en el meu cas es la anteriorn per tant editem el primer quadrat ficant el numero de la versio anterior i al pi_priority fiquem 1001 per tindre major prioritat i al segon quadrat fiquem la ultima verió i pin_priority 500 guardem i sortim.
+<img alt="Imatge" src="images/Imatge%20enganxada%20%2813%29.png" /></p>
+<p>Per comprovar simplement fem la comanda.</p>
+<p>apt-cache policy</p>
+<p>I ens surtira a vaix de tot les versions.
+<img alt="Imatge" src="images/Imatge%20enganxada%20%2814%29.png" /></p>
+<p>I com ens podem ficsar ens a canviat el candidat d'actualització dels paquets.
+<img alt="Imatge" src="images/Selecci%C3%B3_064.png" /></p>
 <p xmlns:cc="http://creativecommons.org/ns#" >Esta obra está marcada con <a href="https://creativecommons.org/publicdomain/zero/1.0/?ref=chooser-v1" target="_blank" rel="licencia noopener noreferrer" style="display:inline-block;">CC0 1.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/zero.svg?ref=chooser-v1" alt=""></a></p>
 
 
