@@ -721,6 +721,165 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#diferencies-entre-anacron-i-cron" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diferències entre Anacron i Cron
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quan-utilitzar-anacron-i-cron" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quan utilitzar Anacron i Cron
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quan utilitzar Anacron i Cron">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anacron" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anacron
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cron" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cron
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opcions-de-cron" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opcions de Cron
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Opcions de Cron">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arxiu-global" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arxiu Global
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-per-usuari" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració per Usuari
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arxius-predefinits-en-etccron" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arxius Predefinits en /etc/cron.*
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proves_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proves
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacio-i-configuracio-dun-script-per-a-crondaily" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació i configuració d'un script per a cron.daily
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creació i configuració d'un script per a cron.daily">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passos-seguits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passos seguits:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-etccrondaily" class="md-nav__link">
+    <span class="md-ellipsis">
+      Què és /etc/cron.daily?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandaments-utilitzats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comandaments utilitzats:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple-de-contingut-de-lscript-copiash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple de contingut de l'script copia.sh:
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2094,6 +2253,111 @@ Verifica que el Shell és <code>/bin/bash</code>:</li>
 </li>
 </ul>
 <p><code>echo "1 5 backup.daily rsync -av /origen /destinació" &gt;&gt; /etc/anacrontab</code></p>
+<h2 id="diferencies-entre-anacron-i-cron">Diferències entre Anacron i Cron</h2>
+<p>En sistemes operatius anteriors, <strong>Anacron</strong> i <strong>Cron</strong> eren eines separades, cadascuna amb funcions específiques. Ambdues serveixen per automatitzar tasques en sistemes Linux i Unix, però tenen diferències clau que determinen quan utilitzar una o l'altra.</p>
+<h2 id="quan-utilitzar-anacron-i-cron">Quan utilitzar Anacron i Cron</h2>
+<h3 id="anacron">Anacron</h3>
+<ul>
+<li>Està dissenyat per sistemes que no estan en funcionament de manera constant.</li>
+<li>Detecta si hi ha tasques programades que no s'han executat a l'hora prevista (perquè l'ordinador estava apagat) i les executa quan el sistema s'engega.</li>
+<li>S'utilitza per tasques programades que treballen a nivell del sistema operatiu, com manteniments diaris, setmanals o mensuals.</li>
+</ul>
+<p><strong>Exemple d'ús:</strong> Manteniments automàtics en un ordinador d'escriptori que no funciona durant la nit.</p>
+<h3 id="cron">Cron</h3>
+<ul>
+<li>Ideal per a sistemes que estan en funcionament constantment, com servidors.</li>
+<li>Les tasques s'executen exactament a l'hora programada, però si l'ordinador està apagat en aquell moment, la tasca no es realitzarà.</li>
+<li>S'utilitza quan cal executar accions en moments determinats, com enviar notificacions o executar processos nocturns.</li>
+</ul>
+<p><strong>Exemple d'ús:</strong> Programar una tasca diària a les 3 de la matinada en un servidor.</p>
+<hr />
+<h2 id="opcions-de-cron">Opcions de Cron</h2>
+<h3 id="arxiu-global">Arxiu Global</h3>
+<ul>
+<li>Per configurar tasques globalment (aplicables a tots els usuaris del sistema), s'utilitza l'arxiu <code>/etc/crontab</code>.</li>
+<li>Aquest arxiu permet gestionar tasques que necessiten permisos de sistema o que afecten diversos usuaris.</li>
+</ul>
+<h3 id="configuracio-per-usuari">Configuració per Usuari</h3>
+<ul>
+<li>Quan es vol definir tasques específiques per a un usuari en particular, s'utilitza la comanda:
+  <code>crontab -e -u usuari</code></li>
+<li>Aquesta comanda obre un fitxer de configuració exclusiu per a l'usuari, on es poden programar les tasques personalitzades.</li>
+</ul>
+<h3 id="arxius-predefinits-en-etccron">Arxius Predefinits en <code>/etc/cron.*</code></h3>
+<ul>
+<li>Aquests directoris contenen arxius per executar tasques de manera automàtica en intervals específics:</li>
+<li><code>/etc/cron.daily</code>: Tasques que s'executen diàriament.</li>
+<li><code>/etc/cron.weekly</code>: Tasques que s'executen setmanalment.</li>
+<li><code>/etc/cron.monthly</code>: Tasques que s'executen mensualment.</li>
+</ul>
+<p>Amb aquesta configuració, es poden automatitzar tasques adaptades a diferents necessitats, optimitzant el rendiment del sistema.</p>
+<h2 id="proves_1">Proves</h2>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28123%29.png" /></p>
+<h2 id="creacio-i-configuracio-dun-script-per-a-crondaily">Creació i configuració d'un script per a <code>cron.daily</code></h2>
+<h3 id="passos-seguits">Passos seguits:</h3>
+<ol>
+<li><strong>Creació de l'script <code>copia.sh</code>:</strong></li>
+<li>Es va utilitzar el comandament:
+     <code>sudo nano copia.sh</code></li>
+<li>
+<p>Això obre l'editor de text <strong>nano</strong> amb privilegis de superusuari per crear o editar l'script <code>copia.sh</code>. Aquest script conté les instruccions per a una tasca automatitzada.</p>
+</li>
+<li>
+<p><strong>Accedir al directori <code>cron.daily</code>:</strong></p>
+</li>
+<li>Es va navegar al directori amb:
+     <code>cd /etc/cron.daily/</code></li>
+<li>
+<p>Aquest directori conté scripts que s'executen automàticament <strong>diàriament</strong> gràcies al servei <strong>cron</strong>.</p>
+</li>
+<li>
+<p><strong>Llistat dels scripts presents al directori:</strong></p>
+</li>
+<li>Es va executar:
+     <code>ls</code></li>
+<li>
+<p>Això mostra els scripts existents al directori, incloent-hi el recentment creat <code>copia.sh</code>, juntament amb altres scripts com <code>logrotate</code>, <code>man-db</code>, etc.</p>
+</li>
+<li>
+<p><strong>Renomenar l'script <code>copia.sh</code>:</strong></p>
+</li>
+<li>Es va fer servir:
+     <code>sudo mv copia.sh copia</code></li>
+<li>Aquest comandament renomena l'script <code>copia.sh</code> a <code>copia</code>. Això podria ser per uniformitat o per adequar-se a una convenció de noms.</li>
+</ol>
+<hr />
+<h2 id="context">Context</h2>
+<h3 id="que-es-etccrondaily">Què és <code>/etc/cron.daily</code>?</h3>
+<p>El directori <code>/etc/cron.daily</code> forma part del sistema <strong>cron</strong>, encarregat d'executar tasques automatitzades en intervals regulars. Qualsevol script col·locat aquí s'executarà <strong>diàriament</strong> sense necessitat de configuracions addicionals.</p>
+<h3 id="comandaments-utilitzats">Comandaments utilitzats:</h3>
+<ul>
+<li><strong><code>sudo nano</code></strong>: Per crear o editar fitxers amb privilegis d'administrador.</li>
+<li><strong><code>cd</code></strong>: Per canviar de directori.</li>
+<li><strong><code>ls</code></strong>: Per llistar els continguts d'un directori.</li>
+<li><strong><code>sudo mv</code></strong>: Per moure o renombrar fitxers amb permisos d'administrador.</li>
+</ul>
+<hr />
+<h2 id="exemple-de-contingut-de-lscript-copiash">Exemple de contingut de l'script <code>copia.sh</code>:</h2>
+<p>Aquest podria ser un exemple bàsic d'un script de còpia de seguretat:</p>
+<h1 id="binbash">!/bin/bash</h1>
+<h1 id="directori-dorigen">Directori d'origen</h1>
+<p>origen="/home/ub/documents"</p>
+<h1 id="directori-de-destinacio">Directori de destinació</h1>
+<p>destinacio="/backup/documents"</p>
+<h1 id="copia-dels-fitxers">Còpia dels fitxers</h1>
+<p>cp -r "$origen" "$destinacio"</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28124%29.png" /></p>
+<p>Script de Còpia de Seguretat (copia.sh)</p>
+<p>Contingut del codi</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28125%29.png" /></p>
+<p>Fitxer /var/spool/anacron/cron.daily</p>
+<p>Contingut</p>
+<p>Aquest fitxer conté una única línia amb el valor següent:</p>
+<p>20250114</p>
+<p>Explicació</p>
+<p>Aquesta data (14 de gener de 2025, en format AAAAMMDD) indica l'última vegada que es van executar les tasques diàries programades per Anacron.</p>
+<p>Si el sistema estava apagat en alguna execució diària prevista, Anacron utilitza aquesta data per comprovar quines tasques s'han de recuperar i executar en l'engegada següent.
+<img alt="Imatge" src="../images/Imatge%20enganxada%20%28126%29.png" /></p>
 
 
 
