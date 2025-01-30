@@ -1,0 +1,1064 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../sprint2/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Sprint 3 - Nichita Sava sistemes operatius</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installacio-domini-ldap-i-unir-client-al-domini" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Nichita Sava sistemes operatius" class="md-header__button md-logo" aria-label="Nichita Sava sistemes operatius" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nichita Sava sistemes operatius
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sprint 3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Sprint 1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sprint2/" class="md-tabs__link">
+        
+  
+    
+  
+  Sprint 2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Sprint 3
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Nichita Sava sistemes operatius" class="md-nav__button md-logo" aria-label="Nichita Sava sistemes operatius" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Nichita Sava sistemes operatius
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sprint 3
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 3
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explicacio-de-la-sortida-de-slapcat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicació de la sortida de slapcat
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explicació de la sortida de slapcat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dn-dcnodomain" class="md-nav__link">
+    <span class="md-ellipsis">
+      dn: dc=nodomain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objectclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      objectClass
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-nodomain" class="md-nav__link">
+    <span class="md-ellipsis">
+      o: nodomain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structuralobjectclass-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      structuralObjectClass: organization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entryuuid" class="md-nav__link">
+    <span class="md-ellipsis">
+      entryUUID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creatorsname-i-modifiersname" class="md-nav__link">
+    <span class="md-ellipsis">
+      creatorsName i modifiersName
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#createtimestamp-i-modifytimestamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      createTimestamp i modifyTimestamp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entrycsn" class="md-nav__link">
+    <span class="md-ellipsis">
+      entryCSN
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reconfiguracio-del-servidor-ldap-amb-dpkg-reconfigure-slapd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reconfiguració del servidor LDAP amb dpkg-reconfigure slapd
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reconfiguració del servidor LDAP amb dpkg-reconfigure slapd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-la-base-de-dades-actual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminar la base de dades actual?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-una-base-de-dades-nova" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear una base de dades nova?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nom-del-domini-dns-de-la-base-de-dades-ldap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nom del domini (DNS) de la base de dades LDAP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#organitzacio-associada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organització associada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-de-lusuari-administrador-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració de l'usuari administrador (root)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#habilitar-linterficie-de-protocol-ldapv2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Habilitar l'interfície de protocol LDAPv2?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-del-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració del backend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcions-de-replicacio-si-sescau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opcions de replicació (si s'escau)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quan-utilitzar-dpkg-reconfigure-slapd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quan utilitzar dpkg-reconfigure slapd
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unitat-organitzativa-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unitat organitzativa users
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unitat organitzativa users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacio-linia-per-linia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicació línia per línia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proposit-del-fitxer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propòsit del fitxer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#com-importar-el-fitxer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Com importar el fitxer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explicacio-linia-per-linia-del-fitxer-ldif-del-grup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicació línia per línia del fitxer LDIF del grup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explicació línia per línia del fitxer LDIF del grup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacio-linia-per-linia_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicació línia per línia
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explicació línia per línia">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dn-cnalumnesouusersdcginadccat" class="md-nav__link">
+    <span class="md-ellipsis">
+      dn: cn=alumnes,ou=users,dc=gina,dc=cat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objectclass-posixgroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      objectClass: posixGroup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objectclass-top" class="md-nav__link">
+    <span class="md-ellipsis">
+      objectClass: top
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cn-alumnes" class="md-nav__link">
+    <span class="md-ellipsis">
+      cn: alumnes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gidnumber-1001" class="md-nav__link">
+    <span class="md-ellipsis">
+      gidNumber: 1001
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memberuid-alu1" class="md-nav__link">
+    <span class="md-ellipsis">
+      memberUid: alu1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proposit-del-fitxer_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Propòsit del fitxer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#com-importar-el-fitxer_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Com importar el fitxer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracio-dun-usuari-ldap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració d'un Usuari LDAP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuració d'un Usuari LDAP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicacio-del-contingut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explicació del contingut
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilitat-del-fitxer-ldif" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilitat del fitxer .ldif
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utilitat del fitxer .ldif">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#com-carregar-aquest-fitxer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Com carregar aquest fitxer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacio-nscd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalació nscd
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instalacio-libnss-ldap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalacio libnss-ldap
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="installacio-domini-ldap-i-unir-client-al-domini">INSTAL·LACIÓ DOMINI LDAP I UNIR CLIENT AL DOMINI</h1>
+<p>Primer fiquem els dos equips a la mateixa red local.</p>
+<p>Servidor la configurem per a que sigui estatica:</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28127%29.png" /></p>
+<p>Client la deixem en DHCP:</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28128%29.png" /></p>
+<p>Entrem al servidor entrem al mode root <code>sudo su</code> i canviem el nom del equip <code>nano /etc/hostname</code>:</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28129%29.png" /></p>
+<p>Ara entrem als hosts amb <code>nano /etc/hosts/</code> i fiquem la ip que hem configurat manualment al sevidor u tambe fiquem el hostname que hem ficat al <code>/etc/hostname</code> tambe fiquem un nom de domini que el meu es <code>ubServer.gina.cat</code>.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28130%29.png" /></p>
+<p>Ara instalem el LDAP: <code>apt install slapd ldap-utils</code>.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28131%29.png" /></p>
+<p>Fiquem la contrsenya i la aceptem.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28132%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28133%29.png" /></p>
+<hr />
+<h2 id="explicacio-de-la-sortida-de-slapcat">Explicació de la sortida de slapcat</h2>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28134%29.png" /></p>
+<h3 id="dn-dcnodomain">dn: dc=nodomain</h3>
+<p>Aquesta línia defineix el "Distinguished Name" (DN) de l'entrada principal a la base de dades LDAP. En aquest cas, el domini és <code>nodomain</code>.</p>
+<h3 id="objectclass">objectClass</h3>
+<p>Defineix els tipus d'objectes a què pertany aquesta entrada LDAP:</p>
+<ul>
+<li><strong>top</strong>: Classe genèrica bàsica de la jerarquia LDAP.</li>
+<li><strong>dcObject</strong>: Especifica que aquesta entrada representa un component de domini.</li>
+<li><strong>organization</strong>: Indica que aquesta entrada també pertany al tipus organització.</li>
+</ul>
+<h3 id="o-nodomain">o: nodomain</h3>
+<p>Especifica el nom de l'organització associada, que aquí és també <code>nodomain</code>.</p>
+<h3 id="structuralobjectclass-organization">structuralObjectClass: organization</h3>
+<p>Defineix la classe estructural principal d'aquesta entrada, que és una organització.</p>
+<h3 id="entryuuid">entryUUID</h3>
+<p>És un identificador únic associat a aquesta entrada, generat automàticament per OpenLDAP.</p>
+<h3 id="creatorsname-i-modifiersname">creatorsName i modifiersName</h3>
+<p>Indiquen el nom del creador (<code>cn=admin,dc=nodomain</code>) i de l'últim modificador de l'entrada.</p>
+<h3 id="createtimestamp-i-modifytimestamp">createTimestamp i modifyTimestamp</h3>
+<p>Mostren les marques de temps quan es va crear (<code>20250114T120517Z</code>) i modificar per última vegada l'entrada.</p>
+<h3 id="entrycsn">entryCSN</h3>
+<p>Aquesta és la marca de temps de sincronització d'entrada ("Change Sequence Number"). Indica el moment exacte de l'últim canvi a aquesta entrada, incloent informació addicional de sincronització.</p>
+<h2 id="reconfiguracio-del-servidor-ldap-amb-dpkg-reconfigure-slapd">Reconfiguració del servidor LDAP amb dpkg-reconfigure slapd</h2>
+<p>La comanda dpkg-reconfigure slapd és utilitzada en sistemes operatius basats en Debian (com Ubuntu) per reconfigurar el servidor LDAP slapd (el servidor d'OpenLDAP). Aquesta eina permet tornar a executar l'assistent de configuració inicial de slapd per modificar els paràmetres de configuració sense haver de fer-ho manualment.</p>
+<h3 id="eliminar-la-base-de-dades-actual">Eliminar la base de dades actual?</h3>
+<p>Se't preguntarà si vols eliminar la base de dades LDAP existent:</p>
+<ul>
+<li><strong>Sí</strong>: Es destruiran totes les dades actuals i es crearà una nova base de dades.</li>
+<li><strong>No</strong>: Les dades existents es mantindran, però es poden modificar altres paràmetres.</li>
+</ul>
+<h3 id="crear-una-base-de-dades-nova">Crear una base de dades nova?</h3>
+<p>Aquesta opció és rellevant si has triat eliminar la base de dades existent. Et permet crear-ne una de nova amb els valors especificats.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28135%29.png" /></p>
+<h3 id="nom-del-domini-dns-de-la-base-de-dades-ldap">Nom del domini (DNS) de la base de dades LDAP</h3>
+<p>Aquí defines el domini que serà utilitzat com a base per a l'arbre LDAP. Per exemple:
+- Si introdueixes <code>example.com</code>, el directori tindrà un <strong>DN base</strong> de <code>dc=example,dc=com</code>.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28136%29.png" /></p>
+<h3 id="organitzacio-associada">Organització associada</h3>
+<p>Indica el nom de l'organització associada amb aquesta base de dades LDAP. Aquest valor s'emmagatzema en l'atribut <code>o</code> (organization).</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28137%29.png" /></p>
+<h3 id="configuracio-de-lusuari-administrador-root">Configuració de l'usuari administrador (root)</h3>
+<p>Se't demanarà que configuris el <strong>usuari administrador</strong> de l'LDAP:</p>
+<ul>
+<li>
+<p>Per defecte, aquest és <code>cn=admin,&lt;base DN&gt;</code>.</p>
+</li>
+<li>
+<p>També se't demanarà que estableixis una <strong>contrasenya</strong> per a aquest usuari.</p>
+</li>
+</ul>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28138%29.png" /></p>
+<h3 id="habilitar-linterficie-de-protocol-ldapv2">Habilitar l'interfície de protocol LDAPv2?</h3>
+<p>Es pregunta si vols permetre connexions amb el protocol LDAPv2:
+- Aquesta opció normalment es desactiva perquè LDAPv2 està obsolet i és menys segur.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28139%29.png" /></p>
+<h3 id="configuracio-del-backend">Configuració del backend</h3>
+<p>Et permet triar el backend que s'utilitzarà per emmagatzemar les dades LDAP. Per defecte, s'utilitza <strong>MDB (Memory-Mapped Database)</strong>, que és ràpid i eficient.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28140%29.png" /></p>
+<h3 id="opcions-de-replicacio-si-sescau">Opcions de replicació (si s'escau)</h3>
+<p>En configuracions avançades, pots habilitar la replicació entre diversos servidors LDAP, però no sempre es pregunta en instal·lacions bàsiques.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28141%29.png" /></p>
+<h3 id="quan-utilitzar-dpkg-reconfigure-slapd">Quan utilitzar <code>dpkg-reconfigure slapd</code></h3>
+<ul>
+<li><strong>Canvis inicials</strong>: Si necessites reconfigurar el domini base, la contrasenya de l'administrador o altres configuracions inicials.</li>
+<li><strong>Depuració</strong>: Quan el servidor LDAP no funciona com esperat i vols tornar a una configuració predeterminada.</li>
+<li><strong>Actualitzacions</strong>: Després d'actualitzar slapd, per assegurar-te que la configuració està alineada amb la nova versió.</li>
+</ul>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28142%29.png" /></p>
+<h2 id="unitat-organitzativa-users">Unitat organitzativa users</h2>
+<h3 id="explicacio-linia-per-linia">Explicació línia per línia</h3>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28143%29.png" /></p>
+<ol>
+<li>
+<p><strong><code>dn: ou=users,dc=gina,dc=cat</code></strong></p>
+<p>El <strong>Distinguished Name (DN)</strong> defineix la ubicació única d'aquesta entrada a la jerarquia LDAP.</p>
+<p>Aquí es crea una unitat organitzativa (<strong>OU</strong>) anomenada <code>users</code> dins del domini base <code>dc=gina,dc=cat</code>.</p>
+</li>
+<li>
+<p><strong><code>objectClass: organizationalUnit</code></strong></p>
+<p>Defineix que aquesta entrada és una unitat organitzativa dins de l'estructura LDAP.</p>
+</li>
+<li>
+<p><strong><code>objectClass: top</code></strong></p>
+<p>Indica que aquesta entrada pertany a la classe superior (<strong>top</strong>) de la jerarquia LDAP. Això és obligatori en totes les entrades.</p>
+</li>
+<li>
+<p><strong><code>ou: users</code></strong></p>
+<p>Assigna el nom de la unitat organitzativa com <code>users</code>. Aquest valor correspon al nom especificat al DN (<code>ou=users</code>).</p>
+</li>
+</ol>
+<h2 id="proposit-del-fitxer">Propòsit del fitxer</h2>
+<p>Aquest fitxer s'utilitza per crear una nova unitat organitzativa (OU) dins del servidor.</p>
+<h2 id="com-importar-el-fitxer">Com importar el fitxer</h2>
+<p>Per importar aquesta configuració al servidor LDAP, utilitza la següent comanda:</p>
+<pre><code class="language-bash">ldapadd -x -D &quot;cn=admin,dc=gina,dc=cat&quot; -W -f uo.ldif
+</code></pre>
+<ul>
+<li><strong><code>-x</code></strong>: Utilitza mode simple d'autenticació.</li>
+<li><strong><code>-D</code></strong>: Indica el DN de l'administrador (en aquest cas, <code>cn=admin,dc=gina,dc=cat</code>).</li>
+<li><strong><code>-W</code></strong>: Demana la contrasenya de l'administrador.</li>
+<li><strong><code>-f uo.ldif</code></strong>: Especifica el fitxer LDIF a importar.</li>
+</ul>
+<h2 id="explicacio-linia-per-linia-del-fitxer-ldif-del-grup">Explicació línia per línia del fitxer LDIF del grup</h2>
+<h3 id="explicacio-linia-per-linia_1">Explicació línia per línia</h3>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28144%29.png" /></p>
+<h4 id="dn-cnalumnesouusersdcginadccat"><code>dn: cn=alumnes,ou=users,dc=gina,dc=cat</code></h4>
+<p>El <strong>Distinguished Name (DN)</strong> defineix la ubicació única d'aquesta entrada en la jerarquia LDAP.</p>
+<ul>
+<li>Aquesta entrada crea un grup amb el nom comú (<strong>cn</strong>) <code>alumnes</code> dins de la unitat organitzativa (<strong>ou</strong>) <code>users</code>, dins del domini <code>dc=gina,dc=cat</code>.</li>
+</ul>
+<h4 id="objectclass-posixgroup"><code>objectClass: posixGroup</code></h4>
+<p>Defineix que aquesta entrada és un grup del tipus <strong>POSIX</strong>, utilitzat per representar grups en sistemes basats en UNIX/Linux.</p>
+<h4 id="objectclass-top"><code>objectClass: top</code></h4>
+<p>Indica que aquesta entrada pertany a la classe superior (<strong>top</strong>) de la jerarquia LDAP. Això és obligatori en totes les entrades.</p>
+<h4 id="cn-alumnes"><code>cn: alumnes</code></h4>
+<p>Assigna el nom del grup com <code>alumnes</code>. Aquest valor correspon al nom especificat al DN (<code>cn=alumnes</code>).</p>
+<h4 id="gidnumber-1001"><code>gidNumber: 1001</code></h4>
+<p>Defineix l'identificador únic del grup (<strong>GID</strong>, Group ID) en el sistema. Aquí, el valor és <code>1001</code>.</p>
+<h4 id="memberuid-alu1"><code>memberUid: alu1</code></h4>
+<p>Indica un membre del grup. En aquest cas, <code>alu1</code> és un usuari que pertany a aquest grup.</p>
+<h4 id="proposit-del-fitxer_1">Propòsit del fitxer</h4>
+<p>Aquest fitxer s'utilitza per definir un grup LDAP, incloent-hi els membres associats i el seu identificador de grup.</p>
+<h4 id="com-importar-el-fitxer_1">Com importar el fitxer</h4>
+<p>Per importar aquesta configuració al servidor LDAP, pots utilitzar la següent comanda:</p>
+<p><code>ldapadd -x -D "cn=admin,dc=gina,dc=cat" -W -f grup.ldif</code></p>
+<p><code>-x:</code> Utilitza mode simple d'autenticació.</p>
+<p><code>-D:</code> Indica el DN de l'administrador (en aquest cas, cn=admin,dc=gina,dc=cat).</p>
+<p><code>-W:</code> Demana la contrasenya de l'administrador.</p>
+<p><code>-f grup.ldif:</code> Especifica el fitxer LDIF a importar.</p>
+<h2 id="configuracio-dun-usuari-ldap">Configuració d'un Usuari LDAP</h2>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28145%29.png" /></p>
+<h3 id="explicacio-del-contingut">Explicació del contingut</h3>
+<ul>
+<li><strong>dn:</strong> (Distinguished Name) Identificador únic de l'usuari en l'estructura LDAP.</li>
+<li><strong>objectClass:</strong> Classes que defineixen els atributs i funcionalitats de l'usuari.</li>
+<li><code>inetOrgPerson</code>: Usuari d'internet.</li>
+<li><code>organizationalPerson</code>: Usuari associat a una organització.</li>
+<li><code>person</code>: Objecte que representa una persona.</li>
+<li><code>top</code>: Classe base per a tots els objectes.</li>
+<li><code>posixAccount</code>: Necessari per a la integració amb sistemes Unix.</li>
+<li><code>shadowAccount</code>: Atributs addicionals per a contrasenyes Unix.</li>
+<li><strong>userPassword:</strong> Contrasenya de l'usuari.</li>
+<li><strong>cn:</strong> Nom comú de l'usuari.</li>
+<li><strong>sn:</strong> Cognom de l'usuari.</li>
+<li><strong>uidNumber:</strong> Número d'identificació únic de l'usuari.</li>
+<li><strong>gidNumber:</strong> Número d'identificació del grup associat a l'usuari.</li>
+<li><strong>homeDirectory:</strong> Directori personal de l'usuari.</li>
+<li><strong>loginShell:</strong> Shell per defecte per accedir al sistema.</li>
+<li><strong>shadowExpire:</strong> Controla quan expira el compte.</li>
+<li><strong>shadowLastChange:</strong> Data de l'últim canvi de contrasenya.</li>
+<li><strong>shadowMax:</strong> Dies màxims sense canviar contrasenya.</li>
+<li><strong>shadowMin:</strong> Dies mínims abans de poder canviar contrasenya.</li>
+<li><strong>shadowWarning:</strong> Dies abans de l'expiració en què es mostra un avís.</li>
+</ul>
+<h3 id="utilitat-del-fitxer-ldif">Utilitat del fitxer <code>.ldif</code></h3>
+<p>Aquest fitxer s'utilitza per gestionar usuaris en un sistema LDAP, permetent:</p>
+<ul>
+<li>
+<p>Afegir nous usuaris a la base de dades LDAP.</p>
+</li>
+<li>
+<p>Configurar permisos i atributs dels usuaris.</p>
+</li>
+<li>
+<p>Gestionar contrasenyes i dates d'expiració.</p>
+</li>
+</ul>
+<h4 id="com-carregar-aquest-fitxer">Com carregar aquest fitxer</h4>
+<p>Per aplicar aquest fitxer a una base de dades LDAP, s'utilitza la següent comanda:</p>
+<pre><code class="language-bash">ldapadd -x -D &quot;cn=admin,dc=gina,dc=cat&quot; -W -f usu.ldif
+</code></pre>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28146%29.png" /></p>
+<hr />
+<h2 id="instalacio-nscd">Instalació nscd</h2>
+<p><code>sudo apt install nscd</code></p>
+<p>NSCD (Name Service Cache Daemon) és un procés que es fa servir en sistemes Linux per guardar informació consultada prèviament sobre noms d'usuari, grups, noms de domini i altres dades de xarxa. Quan el sistema ha de fer una consulta a un servei extern (com DNS, NIS o LDAP), NSCD guarda els resultats d'aquestes consultes a la memòria per a utilitzar-los en el futur. Això evita que el sistema hagi de fer les mateixes consultes repetidament, millorant així el rendiment i reduint la càrrega al servidor de serveis de noms.</p>
+<p>En resum, NSCD ajuda a fer que el sistema sigui més ràpid i eficient en gestionar informació que es consulta sovint.</p>
+<hr />
+<h2 id="instalacio-libnss-ldap">Instalacio libnss-ldap</h2>
+<p>1 <strong>Instal·lar el paquet <code>libnss-ldap</code></strong></p>
+<p>Executa la següent comanda en un terminal amb privilegis d'administrador:</p>
+<p><code>bash
+   sudo apt update &amp;&amp; sudo apt install libnss-ldap</code></p>
+<p>2 <strong>Configuració inicial</strong>
+   Durant la instal·lació, es demanarà configurar l'accés a LDAP. Proporciona la següent informació:</p>
+<ul>
+<li><strong>URI del servidor LDAP:</strong> <code>ldap://&lt;servidor&gt;</code> (substitueix <code>&lt;servidor&gt;</code> pel domini o IP del servidor LDAP).</li>
+</ul>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28147%29.png" /></p>
+<ul>
+<li><strong>Distinguished Name base (Base DN):</strong> <code>dc=exemple,dc=com</code> (ajusta-ho segons el teu domini).</li>
+</ul>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28148%29.png" /></p>
+<ul>
+<li><strong>Versió de LDAP:</strong> Normalment <code>3</code>.</li>
+</ul>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28149%29.png" /></p>
+<ul>
+<li>Aqui fiquem que Si.</li>
+</ul>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28150%29.png" /></p>
+<ul>
+<li>No.</li>
+</ul>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28151%29.png" /></p>
+<ul>
+<li>I acabem ficant el nom de domini.</li>
+</ul>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28152%29.png" /></p>
+<p>3 <strong>Reconfiguració en cas d'error de validació</strong></p>
+<p>Si el client no pot validar-se al domini, a més de revisar els fitxers de configuració mencionats, executeu sempre la següent comanda:</p>
+<p><code>sudo dpkg-reconfigure ldap-auth-config</code></p>
+<p>Aquesta utilitat permet reconfigurar els paràmetres d'autenticació LDAP de forma interactiva.</p>
+<p>Son casi els mateixos pasos en deferencia de uns quants.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28153%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28154%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28155%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28156%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28157%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28158%29.png" /></p>
+<p>Aqui fiquem la contrasenya</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28159%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28160%29.png" /></p>
+<p><strong>Configurar els mòduls NSS</strong></p>
+<p>Editeu el fitxer <code>/etc/nsswitch.conf</code> i assegureu-vos que inclogui <code>ldap</code> en els apartats següents:</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28161%29.png" /></p>
+<p><strong>Configurar el pam</strong></p>
+<p>Entreu al fitxer <code>/etc/pam.d/common-password</code> i asegurar-vos de que esta <code>use_authtok</code>:</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28162%29.png" /></p>
+<p>Entreu al fitxer <code>/etc/pam.d/common-session</code> i afegim <code>session optional pam_mkhomedir.so skel=/etc/skel umask=077</code>:</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28163%29.png" /></p>
+<p>Editeu el fitxer <code>/usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf</code> i afeigim el que hi ha a la imatge segunet:</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28164%29.png" /></p>
+<p>I ens asegurem que a aparegut el usuari alu1.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28165%29.png" /></p>
+<p>Reiniciem el servidor i al client intentem entrar amb el alu1.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28166%29.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "toc.integrate", "code.tabs", "code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
