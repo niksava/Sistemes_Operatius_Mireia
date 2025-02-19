@@ -958,6 +958,135 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#samba" class="md-nav__link">
+    <span class="md-ellipsis">
+      Samba
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#samba-i-nfs-diferencies-i-caracteristiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Samba i NFS: Diferències i Característiques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Samba i NFS: Diferències i Característiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-samba-smbcifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Samba (SMB/CIFS)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Samba (SMB/CIFS)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques-principals-de-samba" class="md-nav__link">
+    <span class="md-ellipsis">
+      Característiques principals de Samba:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-nfs-network-file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. NFS (Network File System)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. NFS (Network File System)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques-principals-de-nfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Característiques principals de NFS:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-diferencies-principals-entre-samba-i-nfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Diferències principals entre Samba i NFS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusió
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conclusió">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compartir-carpeta-amb-usuaris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compartir carpeta amb usuaris
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compartir carpeta amb usuaris">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuracio client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -980,8 +1109,6 @@
                 
                   
 
-
-  <h1>Sprint 3</h1>
 
 <h2 id="installacio-domini-ldap-i-unir-client-al-domini">INSTAL·LACIÓ DOMINI LDAP I UNIR CLIENT AL DOMINI</h2>
 <p>Primer fiquem els dos equips a la mateixa red local.</p>
@@ -1425,6 +1552,155 @@ problemes amb fitxers enllaçats.</p>
 <p><code>cd nfs</code></p>
 <p>I al servidor podem veure que a aparegut el fitxer.</p>
 <p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28213%29.png" /></p>
+<h2 id="samba">Samba</h2>
+<h1 id="samba-i-nfs-diferencies-i-caracteristiques">Samba i NFS: Diferències i Característiques</h1>
+<p>Samba i NFS (Network File System) són dos protocols utilitzats per compartir fitxers en una xarxa, però tenen diferències importants en la seva implementació i ús.</p>
+<hr />
+<h2 id="1-samba-smbcifs">1. Samba (SMB/CIFS)</h2>
+<p>Samba és una implementació lliure del protocol <strong>SMB (Server Message Block)</strong> i <strong>CIFS (Common Internet File System)</strong>, que permet compartir fitxers, carpetes i impressores entre sistemes Windows, Linux i macOS.  </p>
+<h3 id="caracteristiques-principals-de-samba">Característiques principals de Samba:</h3>
+<ul>
+<li><strong>Nivell d’usuari:</strong> Samba autentica els usuaris abans de permetre l'accés als recursos compartits. Pot treballar amb bases de dades d'usuaris locals o integrar-se amb <strong>LDAP, Active Directory o Kerberos</strong>.</li>
+<li><strong>Compartició de recursos:</strong> A més de carpetes, Samba permet compartir <strong>impressores, serveis d’autenticació (PDC - Primary Domain Controller) i permisos d’accés avançats</strong>.</li>
+<li><strong>Compatibilitat multiplataforma:</strong> Samba permet que <strong>clients Windows i Linux</strong> accedeixin als recursos compartits com si fossin natius del sistema.</li>
+<li><strong>Integració amb LDAP:</strong> Samba pot utilitzar <strong>LDAP (Lightweight Directory Access Protocol)</strong> per gestionar els usuaris i permisos, facilitant l'autenticació centralitzada.</li>
+<li><strong>Configuració avançada de permisos:</strong> Amb ACLs (Access Control Lists), es poden definir permisos detallats per a usuaris i grups.</li>
+</ul>
+<hr />
+<h2 id="2-nfs-network-file-system">2. NFS (Network File System)</h2>
+<p>NFS és un protocol dissenyat per compartir fitxers en xarxes UNIX/Linux, creat originalment per Sun Microsystems.  </p>
+<h3 id="caracteristiques-principals-de-nfs">Característiques principals de NFS:</h3>
+<ul>
+<li><strong>Nivell de sistema de fitxers:</strong> A diferència de Samba, NFS no treballa a nivell d'usuari sinó a nivell del sistema de fitxers. No requereix autenticació d’usuaris, sinó que es basa en permisos del sistema i identificadors d’usuari (<strong>UID/GID</strong>).</li>
+<li><strong>Rendiment elevat en entorns UNIX/Linux:</strong> Com que no hi ha una capa d'autenticació per usuari, NFS és més ràpid en xarxes UNIX.</li>
+<li><strong>Transparència en muntatge:</strong> Els sistemes clients poden muntar recursos compartits NFS com si fossin directoris locals.</li>
+<li><strong>Limitat a sistemes UNIX/Linux:</strong> No té compatibilitat nativa amb Windows, tot i que es poden instal·lar clients NFS en aquest sistema.</li>
+</ul>
+<hr />
+<h2 id="3-diferencies-principals-entre-samba-i-nfs">3. Diferències principals entre Samba i NFS</h2>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Samba (SMB/CIFS)</th>
+<th>NFS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autenticació</strong></td>
+<td>A nivell d’usuari (LDAP, Active Directory)</td>
+<td>A nivell de sistema (UID/GID)</td>
+</tr>
+<tr>
+<td><strong>Compatibilitat</strong></td>
+<td>Windows, Linux i macOS</td>
+<td>Principalment Linux i UNIX</td>
+</tr>
+<tr>
+<td><strong>Rendiment</strong></td>
+<td>Lleugerament més lent (autenticació i permisos ACLs)</td>
+<td>Més ràpid en sistemes UNIX/Linux</td>
+</tr>
+<tr>
+<td><strong>Seguretat</strong></td>
+<td>Més segur (autenticació per usuari, ACLs, integració LDAP)</td>
+<td>Basat en permisos de fitxers i UID/GID</td>
+</tr>
+<tr>
+<td><strong>Ús principal</strong></td>
+<td>Compartició de fitxers, carpetes i impressores en xarxes heterogènies</td>
+<td>Compartició de fitxers en entorns UNIX/Linux</td>
+</tr>
+<tr>
+<td><strong>Configuració</strong></td>
+<td>Requereix més configuració (smb.conf)</td>
+<td>Configuració senzilla (exports)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="conclusio">Conclusió</h2>
+<ul>
+<li><strong>Samba</strong> és la millor opció per compartir recursos en una xarxa amb Windows i Linux, especialment si es necessita autenticació d’usuaris i integració amb LDAP.</li>
+<li><strong>NFS</strong> és més eficient en entorns <strong>totalment UNIX/Linux</strong>, però no ofereix autenticació a nivell d’usuari.</li>
+</ul>
+<h3 id="compartir-carpeta-amb-usuaris">Compartir carpeta amb usuaris</h3>
+<h4 id="configuracio-server">Configuració server</h4>
+<p>Actualitzem els paquets.</p>
+<p><code>sudo apt update</code></p>
+<p>Instalem el samba.</p>
+<p><code>sudo apt install samba</code></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28214%29.png" /></p>
+<p>Ara crearem la carpeta perfils i li donem tots els permisos dins del seguent directori (perfils sense la "/").</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28215%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28216%29.png" /></p>
+<p>Modifiqueu el seguent directori a baix del fitxer </p>
+<p>nano /etc/samba/smb.conf</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28217%29.png" /></p>
+<ol>
+<li>
+<p>path = /perfils
+→ Indica que la carpeta compartida es troba a /perfils.</p>
+</li>
+<li>
+<p>guest ok = yes
+→ Permet que qualsevol usuari pugui accedir-hi sense necessitat d'autenticació.</p>
+</li>
+<li>
+<p>directory mask = 0755
+→ Defineix els permisos per als directoris creats dins de la carpeta:</p>
+</li>
+</ol>
+<p>Propietari: lectura, escriptura i execució.
+Grup i altres usuaris: només lectura i execució.</p>
+<ol>
+<li>create mask = 0644
+→ Estableix els permisos per als fitxers creats dins de la carpeta:</li>
+</ol>
+<p>Propietari: lectura i escriptura.
+Grup i altres usuaris: només lectura.</p>
+<ol>
+<li>
+<p>browseable = yes
+→ Permet que aquesta carpeta sigui visible quan els usuaris exploren els recursos compartits de Samba.</p>
+</li>
+<li>
+<p>read list = @dam
+→ Els usuaris del grup dam només tenen permisos de lectura.</p>
+</li>
+<li>
+<p>write list = raul
+→ L'usuari raul té permisos d'escriptura en aquest recurs.</p>
+</li>
+<li>
+<p>invalid users = enric
+→ L'usuari enric té denegat l'accés a aquesta carpeta, independentment dels altres permisos.</p>
+</li>
+</ol>
+<p>Ara fes un <code>systemctl restart smbd nmbd</code> per a reiniciar el servei.</p>
+<p>Afegiu els usuaris.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28218%29.png" /></p>
+<p>Comprovem de si ja estan afegits.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28219%29.png" /></p>
+<p>Afegim un grup <code>dam</code> i afegim tots els usuaris que hem creat al grup.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28220%29.png" /></p>
+<p>Ara afegim els usuaris a la carpeta compartida de samba amb contrasenya que puguin connectar a la carpeta.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28221%29.png" /></p>
+<h4 id="configuracio-client">Configuracio client</h4>
+<p>Instalem el smbclient.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28222%29.png" /></p>
+<p>Quan o tinguesem entrem al gestor d'arxius i a la part Otras obicaciones fiquem la ip del servidor i el nom de la carpeta.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28223%29.png" /></p>
+<p>Es podra conectar en anonim pero no podra fer res.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28224%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28225%29.png" /></p>
+<p>El usuari raul es podra conectar i crear carpetes i fer de tot.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28226%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28227%29.png" /></p>
+<p>El usuari walid sol es podra conectar.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28228%29.png" /></p>
+<p>I el usuari enric no es podra conectar a la carpeta.</p>
 
 
 
