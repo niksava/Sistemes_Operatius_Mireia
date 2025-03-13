@@ -12,6 +12,8 @@
         <link rel="prev" href="../sprint2/">
       
       
+        <link rel="next" href="../sprint4/">
+      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
@@ -205,6 +207,23 @@
     
   
   Sprint 3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sprint4/" class="md-tabs__link">
+        
+  
+    
+  
+  Sprint 4
 
       </a>
     </li>
@@ -1082,6 +1101,39 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#verificar-usuaris-amb-samba" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificar usuaris amb samba
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verificar usuaris amb samba">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1091,6 +1143,26 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 4
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1701,6 +1773,79 @@ Grup i altres usuaris: només lectura.</p>
 <p>El usuari walid sol es podra conectar.</p>
 <p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28228%29.png" /></p>
 <p>I el usuari enric no es podra conectar a la carpeta.</p>
+<h2 id="verificar-usuaris-amb-samba">Verificar usuaris amb samba</h2>
+<h3 id="server">Server</h3>
+<p>Samba és un programari que permet compartir fitxers i impressores entre sistemes Linux/Unix i sistemes Windows, implementant protocols com SMB/CIFS. Per verificar o autenticar usuaris en un servidor Samba, es segueix un procés que depèn de la configuració del fitxer de configuració de Samba (smb.conf) i de com es gestionen els comptes d'usuari en el sistema.</p>
+<p>Per començar entrem a la derectori "<code>cd /</code>" creem la carpeta perfils jo no la creo perque m'ha quedat de la anterior practica i li done els seguents permisos.</p>
+<p><code>sudo chown usuari:users /perfils</code></p>
+<p><code>sudo chmod 755 /perfils</code></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28229%29.png" /></p>
+<p><code>/perfils *(rw,sync,no_root_squash,no_subtree_check)</code></p>
+<p>Entrem al <code>etc/exports</code> i modifiquem el arxiu.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28230%29.png" /></p>
+<ul>
+<li>
+<p><code>rw</code>: Permeten accés de lectura i escriptura.</p>
+</li>
+<li>
+<p><code>sync</code>: Asseguro que les dades es sincronitzen amb el disc per garantir consistència.</p>
+</li>
+<li>
+<p><code>no_root_squash</code>: Deixo que l’usuari root dels clients tingui privilegis complets com a root al servidor, cosa que pot ser arriscat si no confio en els clients.</p>
+</li>
+<li>
+<p><code>no_subtree_check</code>: Milloro el rendiment desactivant la verificació d’arbre subordinat, però això pot reduir la seguretat en jerarquies complexes.</p>
+</li>
+</ul>
+<p>Ara fem el <code>systectl restart nfs-kernel-server</code></p>
+<p>Ara entrem al directori on tenim els fitxers .ldif en el meu cas es el usuari home/ub/Descargas/arxius i modifiquem el arxiu grup.ldif o en cas en no tindrel el creem amb un mkdir.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28231%29.png" /></p>
+<ul>
+<li>
+<p>Nom del grup (cn): "dam".</p>
+</li>
+<li>
+<p>ID del grup (gidNumber): 1100.</p>
+</li>
+<li>
+<p>Membre (memberUid): L’usuari alu54.</p>
+</li>
+</ul>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28232%29.png" /></p>
+<ul>
+<li>
+<p>Nom (cn): "Alumne54", cognom "Cognom".</p>
+</li>
+<li>
+<p>ID d’usuari (uidNumber) i grup (gidNumber): 1100 (coincideix amb el grup "dam").</p>
+</li>
+<li>
+<p>Directori personal: /perfils/alu54.</p>
+</li>
+<li>
+<p>Shell: /bin/bash.</p>
+</li>
+<li>
+<p>Contrasenya: alu54 (en text pla, cal xifrar-la per seguretat).</p>
+</li>
+<li>
+<p>Atributs de contrasenya: No caduca, amb advertència 7 dies abans de caducar.</p>
+</li>
+</ul>
+<p>Quan el tinguessem fem el segunet comando <code>ldapadd -c -x -D "cn=admin,dc=gina,dc=cat" -W -f nom_fitxer.ldif</code> aixo el fem amb els dos fitxer que hem modificat.</p>
+<h3 id="client">Client</h3>
+<p>Instalem el samba al client.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28233%29.png" /></p>
+<p>Entrem al directori <code>/</code> i creem la carpeta perfils i li donem tots el permisos.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28234%29.png" /></p>
+<p>Entrem al /etc/fstab.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28235%29.png" /></p>
+<p><code>Servidor i directori remot</code>: El directori /perfils del servidor amb IP 10.0.2.15 es munta al directori local /perfils.</p>
+<p><code>Tipus</code>: Utilitza NFS.</p>
+<p><code>Opcions</code>: Muntatge automàtic (auto), sense bloqueig de fitxers (nolock), en segon pla (bg), versió 3 de NFS (nfsvers=3), interrompible (intr), amb TCP (tcp), i temps d’atributs en memòria de 1800 segons (actimeo=1800).</p>
+<p>Fem un reboot de la maquina client.</p>
+<p>I com podem veure he pogut entrar al usuari.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28236%29.png" /></p>
 
 
 
