@@ -1,0 +1,910 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../sprint4/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Sprint 1w - Nichita Sava sistemes operatius</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installacio-i-configuracio-de-windows-10-i-windows-server" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Nichita Sava sistemes operatius" class="md-header__button md-logo" aria-label="Nichita Sava sistemes operatius" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nichita Sava sistemes operatius
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sprint 1w
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Sprint 1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sprint2/" class="md-tabs__link">
+        
+  
+    
+  
+  Sprint 2
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sprint3/" class="md-tabs__link">
+        
+  
+    
+  
+  Sprint 3
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sprint4/" class="md-tabs__link">
+        
+  
+    
+  
+  Sprint 4
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Sprint 1w
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Nichita Sava sistemes operatius" class="md-nav__button md-logo" aria-label="Nichita Sava sistemes operatius" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Nichita Sava sistemes operatius
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sprint 1w
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 1w
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installacio-de-windows-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació de Windows 10
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installacio-de-windows-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació de Windows Server
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacio-dun-punt-de-restauracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació d'un Punt de Restauració
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installacio-daplicacions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació d'Aplicacions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracio-duna-ip-estatica-a-windows-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració d'una IP Estàtica a Windows Server
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installacio-dual-amb-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instal·lació Dual amb Ubuntu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestio-dusuaris-i-grups-a-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestió d’Usuaris i Grups a Windows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discos-a-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discos a Windows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discos a Windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conceptes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conceptes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conceptes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestio-de-discos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestió de discos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestió de discos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crear-una-particio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear una partició:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatejar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatejar:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#muntar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Muntar:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desfragmentacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desfragmentació
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eliminacio-i-rescat-del-grub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminació i Rescat del GRUB
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="installacio-i-configuracio-de-windows-10-i-windows-server">Instal·lació i Configuració de Windows 10 i Windows Server</h1>
+<h2 id="installacio-de-windows-10">Instal·lació de Windows 10</h2>
+<ol>
+<li>Seleccionem les opcions desitjades i, a la finestra següent, fem clic a <strong>Començar a instal·lar</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28246%29.png" /></p>
+<ol>
+<li>Acceptem els termes de la llicència i fem clic a <strong>Següent</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28247%29.png" /></p>
+<ol>
+<li>Normalment, seleccionem l'opció <strong>Personalitzada</strong> o <strong>Avançada</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28248%29.png" /></p>
+<ol>
+<li>Com que veiem que tenim un disc de 50 GB disponible,</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28249%29.png" /></p>
+<ol>
+<li>Segons la pàgina oficial de Microsoft, els requisits mínims per a Windows 10 de 64 bits són 20 GB d'espai. Tot i això, assignarem 40 GB per a la instal·lació i deixarem l'espai restant sense particionar o el destinarem a una partició de dades per a l'usuari.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28250%29.png" /></p>
+<ol>
+<li>Fem clic a <strong>Nou</strong> i es crearà un volum nou. Introduïm 40 GB, que equivalen a 40 × 1024 = 40960 MB.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28251%29.png" /></p>
+<ol>
+<li>Acceptem i fem clic a <strong>Següent</strong>. El sistema crearà automàticament una partició addicional de 579 MB per a l'arrencada.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28252%29.png" /></p>
+<ol>
+<li>Esperem que finalitzi la instal·lació.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28253%29.png" /></p>
+<ol>
+<li>Seleccionem la regió desitjada.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28254%29.png" /></p>
+<ol>
+<li>
+<p>Seleccionem la distribució del teclat.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28255%29.png" /></p>
+</li>
+<li>
+<p>Si volem afegir més distribucions de teclat, fem clic a <strong>Afegir distribució</strong>; si no, fem clic a <strong>Ometre</strong>.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28256%29.png" /></p>
+</li>
+<li>
+<p>Com que no tenim un correu electrònic, fem clic a <strong>Unir-se a un domini</strong>. Si volem utilitzar un compte de Microsoft, n'hem de tenir un i afegir-lo.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28257%29.png" /></p>
+</li>
+<li>
+<p>Introduïm el nom d'usuari.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28258%29.png" /></p>
+</li>
+<li>
+<p>Introduïm la contrasenya i la confirmem.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28259%29.png" /></p>
+</li>
+<li>
+<p>Responem a les preguntes de seguretat.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28260%29.png" /></p>
+</li>
+<li>
+<p>En aquest apartat, rebutgem totes les opcions o seleccionem <strong>No</strong>.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28261%29.png" /></p>
+</li>
+</ol>
+<h2 id="installacio-de-windows-server">Instal·lació de Windows Server</h2>
+<p>La instal·lació de Windows Server és molt similar a la de Windows 10.</p>
+<ol>
+<li>Seleccionem la segona opció per instal·lar Windows Server amb interfície gràfica. Si triem la primera opció, s'instal·larà sense interfície gràfica, només amb línia de comandes (CLI).</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28262%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28263%29.png" /></p>
+<ol>
+<li>Acceptem la llicència i fem clic a <strong>Següent</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28264%29.png" /></p>
+<ol>
+<li>Seleccionem l'opció <strong>Personalitzada</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28265%29.png" /></p>
+<ol>
+<li>Fem clic a <strong>Següent</strong> sense modificar res, assignant tot el disc al sistema. Comença la instal·lació i esperem que finalitzi.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28266%29.png" /></p>
+<ol>
+<li>Un cop finalitzada, apareix una finestra on hem d'introduir la contrasenya de l'administrador.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28267%29.png" /></p>
+<ol>
+<li>El sistema ja estarà instal·lat.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28268%29.png" /></p>
+<h2 id="creacio-dun-punt-de-restauracio">Creació d'un Punt de Restauració</h2>
+<ol>
+<li>Escrivim <strong>punt de restauració</strong> a la barra de cerca i seleccionem l'opció corresponent.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28272%29.png" /></p>
+<ol>
+<li>Fem clic a <strong>Configurar</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28270%29.png" /></p>
+<ol>
+<li>Activem la protecció del sistema i fem clic a <strong>Acceptar</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28269%29.png" /></p>
+<ol>
+<li>Tornem enrere i fem clic a <strong>Crear</strong>. Apareix una finestra on introduïm el nom del punt de restauració, que hauria de ser una data o un identificador fàcil de reconèixer.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28271%29.png" /></p>
+<h2 id="installacio-daplicacions">Instal·lació d'Aplicacions</h2>
+<ol>
+<li>Anem a la pàgina oficial de Google, descarreguem l'arxiu <strong>.exe</strong> de l'aplicació desitjada (per exemple, Google Chrome) i l'executem.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28273%29.png" /></p>
+<ol>
+<li>Fem clic a <strong>Permetre</strong> per iniciar la instal·lació.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28274%29.png" /></p>
+<ol>
+<li>Esperem que finalitzi la instal·lació.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28275%29.png" /></p>
+<ol>
+<li>Un cop instal·lada, l'aplicació estarà disponible per al seu ús.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28276%29.png" /></p>
+<h2 id="configuracio-duna-ip-estatica-a-windows-server">Configuració d'una IP Estàtica a Windows Server</h2>
+<ol>
+<li>Anem a <strong>Configuració</strong> &gt; <strong>Xarxa i Internet</strong> &gt; <strong>Estat</strong> i seleccionem <strong>Canviar opcions de l'adaptador</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28277%29.png" /></p>
+<ol>
+<li>Fem clic dret sobre l'adaptador de xarxa que volem configurar i triem <strong>Propietats</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28278%29.png" /></p>
+<ol>
+<li>Seleccionem <strong>Protocol d'Internet versió 4 (TCP/IPv4)</strong> i fem doble clic.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28279%29.png" /></p>
+<ol>
+<li>Introduïm la configuració de la IP estàtica: adreça IP, màscara de subxarxa, porta d'enllaç predeterminada i servidors DNS.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28280%29.png" /></p>
+<ol>
+<li>Comprovem que la configuració s'ha aplicat correctament i que tenim connexió a Internet.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28281%29.png" /></p>
+<h2 id="installacio-dual-amb-ubuntu">Instal·lació Dual amb Ubuntu</h2>
+<ol>
+<li>Inserim la ISO d'Ubuntu i iniciem la màquina virtual. A la pantalla de benvinguda, seleccionem <strong>Instal·lar Ubuntu</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28282%29.png" /></p>
+<ol>
+<li>Seleccionem <strong>Instal·lar Ubuntu al costat de Windows 10</strong> per a una instal·lació dual.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28283%29.png" /></p>
+<h2 id="gestio-dusuaris-i-grups-a-windows">Gestió d’Usuaris i Grups a Windows</h2>
+<ol>
+<li>Per crear un usuari, anem a <strong>Configuració</strong> &gt; <strong>Comptes</strong> &gt; <strong>Família i altres usuaris</strong> &gt; <strong>Afegir una altra persona a aquest equip</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28287%29.png" /></p>
+<ol>
+<li>Seleccionem <strong>No tinc les dades d'inici de sessió d'aquesta persona</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28286%29.png" /></p>
+<ol>
+<li>Triem <strong>Afegir un usuari sense compte de Microsoft</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28288%29.png" /></p>
+<ol>
+<li>Creem l'usuari amb el nom i la contrasenya.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28289%29.png" /></p>
+<ol>
+<li>L'usuari ja estarà creat.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28290%29.png" /></p>
+<ol>
+<li>Per gestionar grups, anem a <strong>Administració d'equips</strong> &gt; <strong>Usuaris i grups locals</strong> &gt; <strong>Grups</strong>, fem clic dret i seleccionem <strong>Grup nou</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28291%29.png" /></p>
+<ol>
+<li>Introduïm el nom del grup i afegim usuaris.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28292%29.png" /></p>
+<ol>
+<li>Seleccionem l'usuari, comprovem la seva existència i acceptem.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28293%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28294%29.png" /></p>
+<ol>
+<li>Per eliminar un usuari d'un grup, el seleccionem i fem clic a <strong>Treure</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28295%29.png" /></p>
+<ol>
+<li>
+<p>Per deshabilitar un usuari, fem clic dret sobre l'usuari, triem <strong>Propietats</strong> i marquem <strong>Compte deshabilitat</strong>.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28296%29.png" /></p>
+</li>
+<li>
+<p>Per canviar la contrasenya, fem clic dret sobre l'usuari i seleccionem <strong>Establir contrasenya</strong>.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28297%29.png" /></p>
+</li>
+<li>
+<p>Fem clic a <strong>Continuar</strong> i establim la nova contrasenya.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28298%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28299%29.png" /></p>
+</li>
+<li>
+<p>Per configurar el temps de caducitat de la contrasenya, anem a <strong>Directiva de seguretat local</strong> &gt; <strong>Directiva de contrasenyes</strong>, fem doble clic sobre cada apartat i establim els valors desitjats.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28300%29.png" /></p>
+</li>
+</ol>
+<h2 id="discos-a-windows">Discos a Windows</h2>
+<h3 id="conceptes">Conceptes</h3>
+<ul>
+<li><strong>Sector</strong>: Igual que a Ubuntu (512 o 4096 bytes, definit pel maquinari).</li>
+<li><strong>Bloc</strong>: En NTFS, la mida del clúster és ajustable (per defecte, 4 KB).</li>
+<li><strong>Fragmentació</strong>: Windows inclou una eina de desfragmentació integrada.</li>
+</ul>
+<h4 id="gestio-de-discos">Gestió de discos</h4>
+<h5 id="crear-una-particio">Crear una partició:</h5>
+<ol>
+<li>Obrim <strong>Administració de discos</strong> (clic dret a "Aquest ordinador" &gt; <strong>Administra</strong> &gt; <strong>Administració de discos</strong>).</li>
+<li>Seleccionem un disc no assignat, fem clic dret i triem <strong>Nou volum simple</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28303%29.png" /></p>
+<ol>
+<li>Assignem 975,6 MiB (aproximadament 1 GB) i formatem amb <strong>NTFS</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28301%29.png" /></p>
+<h5 id="formatejar">Formatejar:</h5>
+<ul>
+<li>Fem clic dret al volum, seleccionem <strong>Formatejar</strong>, triem <strong>NTFS</strong> i la mida del clúster (per exemple, 4096 bytes).</li>
+</ul>
+<h5 id="muntar">Muntar:</h5>
+<ul>
+<li>Assignem una lletra de unitat (per exemple, <code>A:</code>) durant la creació del volum.</li>
+</ul>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28302%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28304%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28305%29.png" /></p>
+<h4 id="desfragmentacio">Desfragmentació</h4>
+<ol>
+<li>Obrim <strong>Desfragmentar i optimitzar unitats</strong> (cerca a la barra de tasques).</li>
+<li>Seleccionem la partició i fem clic a <strong>Optimitza</strong>.</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28306%29.png" /></p>
+<h2 id="eliminacio-i-rescat-del-grub">Eliminació i Rescat del GRUB</h2>
+<ol>
+<li>Per eliminar el GRUB, iniciem amb la ISO de GParted i eliminem la partició <code>/dev/sda1</code> (boot).</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28307%29.png" /></p>
+<ol>
+<li>Si apareix un error,</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28308%29.png" /></p>
+<ol>
+<li>Carreguem la ISO d'Ubuntu, obrim una terminal i executem les comandes següents:</li>
+</ol>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28309%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28310%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28311%29.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "toc.integrate", "code.tabs", "code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
