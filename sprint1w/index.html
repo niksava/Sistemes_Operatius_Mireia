@@ -1018,6 +1018,25 @@
 <p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28315%29.png" /></p>
 <p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28316%29.png" /></p>
 <p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28317%29.png" /></p>
+<p>Primer, vaig muntar la partició on tinc Ubuntu instal·lat. En el meu cas és /dev/sda4:</p>
+<p><code>sudo mount /dev/sda4 /mnt</code></p>
+<p>Després vaig enllaçar els directoris del sistema necessaris perquè funcionés el xroot:</p>
+<p><code>sudo mount --bind /dev /mnt/dev</code>
+<code>sudo mount --bind /proc /mnt/proc</code>
+<code>sudo mount --bind /sys /mnt/sys</code></p>
+<p>Vaig entrar dins del sistema instal·lat utilitzant chroot, com si estigués treballant des del propi sistema operatiu:</p>
+<p><code>sudo chroot /mnt</code></p>
+<p>Un cop dins, vaig reinstal·lar el GRUB al disc dur principal (/dev/sda):</p>
+<p><code>grub-install /dev/sda</code></p>
+<p>Tot seguit vaig actualitzar la configuració del GRUB per tal que detectés Ubuntu, Windows i altres entrades:</p>
+<p><code>update-grub</code></p>
+<p>El sistema va detectar correctament els nuclis de Linux i també una instal·lació de Windows 10.</p>
+<p>Vaig sortir del sistema chroot i vaig desmuntar els directoris:</p>
+<p><code>exit</code>
+<code>sudo umount /mnt/dev /mnt/proc /mnt/sys</code>
+<code>sudo umount /mnt</code></p>
+<p>Finalment, vaig reiniciar:</p>
+<p><code>sudo reboot</code></p>
 <h4 id="comprovar-que-grub-funciona">Comprovar que GRUB funciona</h4>
 <p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28318%29.png" /></p>
 <h2 id="configuracio-grub">Configuracio GRUB</h2>
