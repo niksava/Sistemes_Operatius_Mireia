@@ -12,6 +12,8 @@
         <link rel="prev" href="../sprint4/">
       
       
+        <link rel="next" href="../sprint2w/">
+      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
@@ -239,6 +241,23 @@
     
   
   Sprint 1w
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sprint2w/" class="md-tabs__link">
+        
+  
+    
+  
+  Sprint 2w
 
       </a>
     </li>
@@ -565,10 +584,138 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#eliminacio-i-rescat-del-grub-per-comandes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminació i rescat del GRUB per comandes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eliminació i rescat del GRUB per comandes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comprovar-el-disc-on-esta-el-grub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprovar el disc on està el GRUB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminacio-del-grub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eliminació del GRUB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recuperacio-del-grub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recuperació del GRUB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recuperació del GRUB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amb-live-usb-ubuntu-o-similar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amb Live USB (Ubuntu o similar):
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprovar-que-grub-funciona" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comprovar que GRUB funciona
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracio-grub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuracio GRUB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuracio GRUB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edita-el-fitxer-de-configuracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edita el fitxer de configuració:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actualitza-la-configuracio-del-grub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actualitza la configuració del GRUB:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinicia-per-veure-els-canvis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reinicia per veure els canvis:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint2w/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprint 2w
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -854,6 +1001,66 @@
 <p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28309%29.png" /></p>
 <p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28310%29.png" /></p>
 <p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28311%29.png" /></p>
+<h2 id="eliminacio-i-rescat-del-grub-per-comandes">Eliminació i rescat del GRUB per comandes</h2>
+<h3 id="comprovar-el-disc-on-esta-el-grub">Comprovar el disc on està el GRUB</h3>
+<p><code>sudo fdisk -l</code></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28311%29.png" /></p>
+<h3 id="eliminacio-del-grub">Eliminació del GRUB</h3>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28312%29.png" /></p>
+<p>Esborra només el MBR (sector d’arrencada).</p>
+<p>Les particions i dades NO es perden.</p>
+<p>En reiniciar, veuràs un error com no such partition o grub rescue&gt;.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28313%29.png" /></p>
+<h3 id="recuperacio-del-grub">Recuperació del GRUB</h3>
+<h4 id="amb-live-usb-ubuntu-o-similar">Amb Live USB (Ubuntu o similar):</h4>
+<p>Seleccionem un iso.</p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28314%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28315%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28316%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28317%29.png" /></p>
+<h4 id="comprovar-que-grub-funciona">Comprovar que GRUB funciona</h4>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28318%29.png" /></p>
+<h2 id="configuracio-grub">Configuracio GRUB</h2>
+<h3 id="edita-el-fitxer-de-configuracio">Edita el fitxer de configuració:</h3>
+<p><code>sudo nano /etc/default/grub</code></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28319%29.png" /></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28322%29.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Personalització</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Temps d’espera</td>
+<td><code>GRUB_TIMEOUT=10</code></td>
+</tr>
+<tr>
+<td>Entrada per defecte</td>
+<td><code>GRUB_DEFAULT=1</code> (segona entrada)</td>
+</tr>
+<tr>
+<td>Mostrar sempre el menú</td>
+<td><code>GRUB_TIMEOUT_STYLE=menu</code></td>
+</tr>
+<tr>
+<td>Imatge de fons del GRUB</td>
+<td>Afegeix <code>GRUB_BACKGROUND="/boot/grub/fons.jpg"</code></td>
+</tr>
+<tr>
+<td>Desactivar splash screen</td>
+<td><code>GRUB_CMDLINE_LINUX_DEFAULT=""</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="actualitza-la-configuracio-del-grub">Actualitza la configuració del GRUB:</h3>
+<p><code>sudo update-grub</code></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28321%29.png" /></p>
+<h3 id="reinicia-per-veure-els-canvis">Reinicia per veure els canvis:</h3>
+<p><code>sudo reboot</code></p>
+<p><img alt="Imatge" src="../images/Imatge%20enganxada%20%28323%29.png" /></p>
 
 
 
